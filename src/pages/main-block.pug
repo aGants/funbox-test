@@ -1,0 +1,18 @@
+mixin pack(number, text, number, present)
+  .main-block-pack.number
+    .container
+      p.main-block-pack__ Сказочное заморское яство
+      h2.main-block-pack__title Нямушка
+      p(class='main-block-pack__with')='c '+text
+      span(class='main-block-pack__number')=number+' порций'
+      p(class='main-block-pack__present')=present
+      svg()
+    span.main-block-pack__text Чего сидишь? Порадуй котэ, <a>купи.</a>
+
+.main-block
+  +pack(1, 'фуагра', '10', 'мышь в подарок')
+  +pack(2, 'рыбой', '40', '2 мыши в подарок')
+  +pack(3, 'курой', '100', '5 мышей в подарок заказчик доволен')
+
+  
+  
