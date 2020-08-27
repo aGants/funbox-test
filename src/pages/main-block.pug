@@ -3,8 +3,8 @@ mixin pack(order, text, number, kg, present)
     .main-block-pack.order
       .container-pack
         p.main-block-pack__description Сказочное заморское яство
-        h2.main-block-pack__title Нямушка
-        b(class='main-block-pack__with')='c '+text
+        b.main-block-pack__title Нямушка
+        p(class='main-block-pack__with')='c '+text
         p(class='main-block-pack__number')
           b=number 
           span=' '+ 'порций'
@@ -16,7 +16,7 @@ mixin pack(order, text, number, kg, present)
     p.main-block__downtext Чего сидишь? Порадуй котэ, <a href=''>купи.</a>
 
 .main-block
-  +pack(1, 'фуагра', '10', '0,5', 'мышь в подарок')
+  +pack(1, 'фуа-гра', '10', '0,5', 'мышь в подарок')
   +pack(2, 'рыбой', '40', '2', '2 мыши в подарок')
   +pack(3, 'курой', '100', '5', '5 мышей в подарок заказчик доволен')
 
