@@ -40,6 +40,12 @@ body {
       color: $text-bg;
       text-align: center;
       margin: 0 auto;
+
+      & a {
+        color: var(--default);
+        text-decoration: none;
+        border-bottom: 1px dashed var(--default);
+      }
     }
 
     &-pack {
