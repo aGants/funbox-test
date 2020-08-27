@@ -40,7 +40,6 @@ body {
       color: $text-bg;
       text-align: center;
       margin: 0 auto;
-
     }
 
     &-pack {
@@ -54,24 +53,32 @@ body {
       border: 5px solid var(--default);
       border-radius: 10px;
 
-      &__desctiption {
-
+      &__description {
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: $second-text-color;
       }
 
       &__title {
-
+        font-size: 32px;
+        color: $main-text-color;
       }
 
       &__with {
-
+        font-size: 24px;
+        color: $main-text-color;
       }
-
+      
       &__number {
-
+        margin-top: 15px;
+        font-size: 14px;;
+        line-height: 16px;
+        color: $second-text-color;
       }
 
       &__present {
-
+        font-size: 14px;
+        color: $second-text-color;
       }
 
       &-kg {

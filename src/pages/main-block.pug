@@ -4,8 +4,10 @@ mixin pack(order, text, number, kg, present)
       .container-pack
         p.main-block-pack__description Сказочное заморское яство
         h2.main-block-pack__title Нямушка
-        p(class='main-block-pack__with')='c '+text
-        span(class='main-block-pack__number')=number+' порций'
+        b(class='main-block-pack__with')='c '+text
+        p(class='main-block-pack__number')
+          b=number 
+          span=' '+ 'порций'
         p(class='main-block-pack__present')=present
       .container-pack 
         div.main-block-pack-kg
