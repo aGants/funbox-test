@@ -3,7 +3,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,7 +16,9 @@ body {
 }
 
 .container {
-
+  &-pack {
+    margin: 25px 15px 15px 50px;
+  }
 }
 
 .main {
@@ -42,6 +44,9 @@ body {
     }
 
     &-pack {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       background: url(../assets/images/cat.jpg) no-repeat bottom left $pack-color;
       width: 320px;
       height: 480px;
@@ -67,6 +72,23 @@ body {
 
       &__present {
 
+      }
+
+      &-kg {
+        float: right;
+        width: 80px;
+        height: 80px;
+        line-height: 60px;
+        font-size: 42px;
+        color: #fff;
+        text-align: center;
+        background: #1698d9;
+        border-radius: 50%;
+        
+        &__p {
+          font-size: 21px;
+          line-height: 1px;
+        }
       }
 
     }
