@@ -7,7 +7,12 @@
 }
 
 body {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url(../assets/images/background.jpg) repeat;
 }
 
 .container {
@@ -17,18 +22,30 @@ body {
 .main {
 
   &__title {
-
+    font: $title-font;
+    text-align: center;
+    color: $text-bg;
   }
   
   &-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1120px;
+    font-family: $main-font-family;
 
-
-    &__text {
+    &__downtext {
+      color: $text-bg;
+      text-align: center;
+      margin: 0 auto;
 
     }
 
     &-pack {
-
+      background-color: $pack-color;
+      width: 320px;
+      height: 480px;
+      margin: 25px 0px 15px;
 
       &__desctiption {
 

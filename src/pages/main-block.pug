@@ -7,7 +7,7 @@ mixin pack(number, text, number, present)
       span(class='main-block-pack__number')=number+' порций'
       p(class='main-block-pack__present')=present
       svg()
-    span.main-block__text Чего сидишь? Порадуй котэ, <a>купи.</a>
+    p.main-block__downtext Чего сидишь? Порадуй котэ, <a>купи.</a>
 
 .main-block
   +pack(1, 'фуагра', '10', 'мышь в подарок')
