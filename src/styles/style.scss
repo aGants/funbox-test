@@ -1,0 +1,55 @@
+@import 'var', 'fonts';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+body {
+
+}
+
+.container {
+
+}
+
+.main {
+
+  &__title {
+
+  }
+  
+  &-block {
+
+
+    &__text {
+
+    }
+
+    &-pack {
+
+
+      &__desctiption {
+
+      }
+
+      &__title {
+
+      }
+
+      &__with {
+
+      }
+
+      &__number {
+
+      }
+
+      &__present {
+
+      }
+
+    }
+  }
+}

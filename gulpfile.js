@@ -35,7 +35,7 @@ function buildPages() {
 }
 
 function buildStyles() {
-  return src('src/styles/*.scss')
+  return src('src/styles/style.scss')
     .pipe(sass())
     .pipe(postcss([
       autoprefixer(),
