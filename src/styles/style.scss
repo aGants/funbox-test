@@ -1,4 +1,4 @@
-@import 'var', 'fonts';
+@import 'var', 'mixins', 'fonts';
 
 * {
   padding: 0;
@@ -11,8 +11,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
   background: url(../assets/images/background.jpg) repeat;
+  @include w-from($screen-md) {
+    height: 100vh;
+  }
 }
 
 .pack-container {
@@ -20,6 +22,10 @@ body {
 }
 
 .main {
+  padding: 22px 0;
+  @include w-from($screen-md) {
+    padding: 0;
+  }
   &__title {
     margin-bottom: 22px;
     font: $title-font;
@@ -29,10 +35,18 @@ body {
   
   &-block {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1120px;
+    flex-direction: column;
+    gap: 50px;
     font-family: $main-font-family;
+    width: 320px;
+    margin: 0 auto;
+    @include w-from($screen-md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 1120px;
+    }
 
     &__downtext {
       font-size: 13px;
