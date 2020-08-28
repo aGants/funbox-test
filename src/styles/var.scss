@@ -16,5 +16,40 @@ $second-text-color: #666666;
   --select: #d91667;
   --select-hover: #e62e7a;
   --disabled: #b3b3b3;
+  --disabled-text: #ffff66;
 }
 
+.default {
+  .main-block {
+    &-border, &-pack-kg {
+      background: var(--default);
+    }
+  }
+}
+
+.selected {
+  .main-block {
+    &-border, &-pack-kg {
+      background: var(--select);
+    }
+  }
+}
+
+.disabled {
+  .pack-container:first-child {
+    filter: opacity(0.5);
+  }
+
+  .main-block {
+    &-pack {
+      filter: brightness(110%);
+      opacity: 0.4;
+    }
+    &-border, &-pack-kg {
+      background: var(--disabled);
+    }
+    &__downtext {
+      color: var(--disabled-text);
+    }
+  }
+}
