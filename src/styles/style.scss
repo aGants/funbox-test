@@ -15,16 +15,11 @@ body {
   background: url(../assets/images/background.jpg) repeat;
 }
 
-
-.container {
-  &-pack {
+.pack-container {
     margin: 19px 11px 10px 44px;
-  }
 }
 
 .main {
-  height: 500px;
-
   &__title {
     margin-bottom: 22px;
     font: $title-font;
