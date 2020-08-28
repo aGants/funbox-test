@@ -11,7 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  background: url(../assets/images/background.jpg) repeat;
+  background: linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 85%, #000000 100%),
+  url(../assets/images/background.jpg) repeat;
   @include w-from($screen-lg) {
     height: 100vh;
   }
