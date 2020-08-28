@@ -1,5 +1,5 @@
 mixin pack(order, text, number, kg, present)
-  .container.order
+  div(class='container '+order)
     .main-block-border
       .main-block-pack
         .pack-container
@@ -17,9 +17,9 @@ mixin pack(order, text, number, kg, present)
     p.main-block__downtext Чего сидишь? Порадуй котэ, <a href=''>купи.</a>
 
 .main-block
-  +pack(1, 'фуа-гра', '10', '0,5', 'мышь в подарок')
-  +pack(2, 'рыбой', '40', '2', '2 мыши в подарок')
-  +pack(3, 'курой', '100', '5', '5 мышей в подарок заказчик доволен')
+  +pack('one', 'фуа-гра', '10', '0,5', 'мышь в подарок')
+  +pack('two', 'рыбой', '40', '2', '2 мыши в подарок')
+  +pack('three', 'курой', '100', '5', '5 мышей в подарок заказчик доволен')
 
   
   
