@@ -1,18 +1,19 @@
 mixin pack(order, text, number, kg, present)
-  .container
-    .main-block-pack.order
-      .container-pack
-        p.main-block-pack__description Сказочное заморское яство
-        b.main-block-pack__title Нямушка
-        p(class='main-block-pack__with')='c '+text
-        p(class='main-block-pack__number')
-          b=number 
-          span=' '+ 'порций'
-        p(class='main-block-pack__present')=present
-      .container-pack 
-        div.main-block-pack-kg
-          span.main-block-pack-kg__span=kg
-          p.main-block-pack-kg__p кг
+  .container.order
+    .main-block-border
+      .main-block-pack
+        .container-pack
+          p.main-block-pack__description Сказочное заморское яство
+          b.main-block-pack__title Нямушка
+          p(class='main-block-pack__with')='c '+text
+          p(class='main-block-pack__number')
+            b=number 
+            span=' '+ 'порций'
+          p(class='main-block-pack__present')=present
+        .container-pack 
+          div.main-block-pack-kg
+            span.main-block-pack-kg__span=kg
+            p.main-block-pack-kg__p кг
     p.main-block__downtext Чего сидишь? Порадуй котэ, <a href=''>купи.</a>
 
 .main-block
