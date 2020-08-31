@@ -41,6 +41,9 @@ $disabled-text: #ffff66;
   @include theme($select-hover);
   }
 
+.select-hover-text {
+  color: $select-hover !important;
+}
 
 .disabled {
   .pack-container:first-child {

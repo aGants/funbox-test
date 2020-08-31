@@ -20,7 +20,7 @@ Vue.component('pack-block', {
       <div class="main-block-pack">
         <div class="pack-container">
           <p class="main-block-pack__description" v-if='data.descText'>Сказочное заморское яство</p>
-          <p class="main-block-pack__description" v-else='data.descText'>Котэ не одобряет</p>
+          <p class="main-block-pack__description select-hover-text" v-else='data.descText'>Котэ не одобряет?</p>
           <b class="main-block-pack__title">Нямушка</b>
           <div>
             <p class="main-block-pack__with">{{data.name}}</p>
@@ -41,7 +41,7 @@ Vue.component('pack-block', {
     </div>
     <p class='main-block__downtext' v-if='data.downText'>{{data.downtext}}</p>
     <p class='main-block__downtext' v-else>Чего сидишь? Порадуй котэ, 
-      <a @click="to_select()">купи.</a>
+      <a class='link' @click="to_select()" @mouseover='to_hover()' @mouseout='to_unhover()'>купи.</a>
     </p>
   </div>
   `
@@ -99,14 +99,15 @@ var app = new Vue ({
       } else if (this.packs[id].status == this.selected || this.packs[id].status == this.selectedHover) {
         this.packs[id].status = this.default;
         this.packs[id].downText = false;
+        this.packs[id].descText = true;
       }
     },
     toHover(id) {
       if (this.packs[id].status == this.default) {
-        console.log(5);
         this.packs[id].status = this.defaultHover;
       } else if (this.packs[id].status == this.selected) {
         this.packs[id].status = this.selectedHover;
+        this.packs[id].descText = false;
       }
     },
     toUnhover(id) {
@@ -114,6 +115,7 @@ var app = new Vue ({
         this.packs[id].status = this.default;
       } else if (this.packs[id].status == this.selectedHover) {
         this.packs[id].status = this.selected;
+        this.packs[id].descText = true;
       }
     }
   }
