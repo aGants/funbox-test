@@ -1,11 +1,13 @@
 Vue.component('pack-block', {
   props: ["data"],
   template: 
-  `<div class="container one">
-    <div class="main-block-border">
+  `<div class="container" :class="[data.packNumber, data.status]">
+    <div class = "main-block-border">
       <div class="main-block-pack">
         <div class="pack-container">
-          <p class="main-block-pack__description">Сказочное заморское яство</p>
+          <p class="main-block-pack__description" v-if='data.descText'>Сказочное заморское яство</p>
+          <p class="main-block-pack__description" v-else='data.descText'>Котэ не одобряет</p>
+
           <b class="main-block-pack__title">Нямушка</b>
           <div>
             <p class="main-block-pack__with">{{data.name}}</p>
@@ -24,7 +26,8 @@ Vue.component('pack-block', {
         </div>
       </div>
     </div>
-    <p class='main-block__downtext'>{{data.downtext}}</p>
+    <p class='main-block__downtext' v-if='data.downText'>{{data.downtext}}</p>
+    <p class='main-block__downtext' v-else>Чего сидишь? Порадуй котэ, <a>купи.</a></p>
   </div>
   `
 });
@@ -32,32 +35,45 @@ Vue.component('pack-block', {
 var app = new Vue ({
   el: '.main-block',
   data: {
+    default: 'default',
+    defaultHover: 'default-hover',
+    selected: 'selected',
+    selectedHover: 'selected-hover',
+    disabled: 'disabled',
     packs: [
       {
         name:'фуа-гра',
         number:'10',
         present: 'мышь в подарок',
         kg: '0,5',
-        downtext: 'Печень утки разварная с артишоками'
+        downtext: 'Печень утки разварная с артишоками',
+        packNumber: 'one',
+        status: 'default',
+        descText: true,
+        downText: false
       },
       {
         name:'рыбой',
         number:'40',
         present: '2 мыши в подарок',
         kg: '2',
-        downtext: 'Головы щучьи с чесноком да свежайшая сёмгушка'
+        downtext: 'Головы щучьи с чесноком да свежайшая сёмгушка',
+        packNumber: 'two',
+        status: 'default',
+        descText: true,
+        downText: false
       },
       {
         name:'курой',
         number:'100',
         present: '5 мышей в подарок заказчик доволен',
         kg: '5',
-        downtext: 'Филе из цыплят с трюфелями в бульоне'
+        downtext: 'Филе из цыплят с трюфелями в бульоне',
+        packNumber: 'three',
+        status: 'default',
+        descText: true,
+        downText: false
       }
     ]
-  },
-
-  mounted: {
-
   }
 });
