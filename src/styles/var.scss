@@ -49,13 +49,13 @@ $disabled-text: #ffff66;
   .pack-container:first-child {
     filter: opacity(0.5);
   }
-
   .main-block {
     &-pack {
       filter: brightness(110%);
       opacity: 0.4;
     }
     &-border, &-pack-kg {
+      cursor: no-drop;
       background: $disabled;
     }
     &__downtext {

@@ -40,6 +40,7 @@ Vue.component('pack-block', {
       </div>
     </div>
     <p class='main-block__downtext' v-if='data.downText'>{{data.downtext}}</p>
+    <p class='main-block__downtext' v-else-if='data.status === "disabled"'> Печалька, с {{data.name}} закончилось </p>
     <p class='main-block__downtext' v-else>Чего сидишь? Порадуй котэ, 
       <a class='link' @click="to_select()" @mouseover='to_hover()' @mouseout='to_unhover()'>купи.</a>
     </p>
@@ -85,7 +86,7 @@ var app = new Vue ({
         kg: '5',
         downtext: 'Филе из цыплят с трюфелями в бульоне',
         packNumber: 'three',
-        status: 'default',
+        status: 'disabled',
         descText: true,
         downText: false
       }
@@ -93,29 +94,35 @@ var app = new Vue ({
   },
   methods: {
     toSelect(id) {
-      if (this.packs[id].status == this.default || this.packs[id].status == this.defaultHover) {
-        this.packs[id].status = this.selected;
-        this.packs[id].downText = true;
-      } else if (this.packs[id].status == this.selected || this.packs[id].status == this.selectedHover) {
-        this.packs[id].status = this.default;
-        this.packs[id].downText = false;
-        this.packs[id].descText = true;
+      if (this.packs[id].status!= this.disabled) {
+        if (this.packs[id].status == this.default || this.packs[id].status == this.defaultHover) {
+          this.packs[id].status = this.selected;
+          this.packs[id].downText = true;
+        } else if (this.packs[id].status == this.selected || this.packs[id].status == this.selectedHover) {
+          this.packs[id].status = this.default;
+          this.packs[id].downText = false;
+          this.packs[id].descText = true;
+        }
       }
     },
     toHover(id) {
-      if (this.packs[id].status == this.default) {
-        this.packs[id].status = this.defaultHover;
-      } else if (this.packs[id].status == this.selected) {
-        this.packs[id].status = this.selectedHover;
-        this.packs[id].descText = false;
+      if (this.packs[id].status != this.disabled) {
+        if (this.packs[id].status == this.default) {
+          this.packs[id].status = this.defaultHover;
+        } else if (this.packs[id].status == this.selected) {
+          this.packs[id].status = this.selectedHover;
+          this.packs[id].descText = false;
+        }
       }
     },
     toUnhover(id) {
-      if (this.packs[id].status == this.defaultHover) {
-        this.packs[id].status = this.default;
-      } else if (this.packs[id].status == this.selectedHover) {
-        this.packs[id].status = this.selected;
-        this.packs[id].descText = true;
+      if (this.packs[id].status != this.disabled) {
+        if (this.packs[id].status == this.defaultHover) {
+          this.packs[id].status = this.default;
+        } else if (this.packs[id].status == this.selectedHover) {
+          this.packs[id].status = this.selected;
+          this.packs[id].descText = true;
+        }
       }
     }
   }
