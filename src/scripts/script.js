@@ -3,11 +3,20 @@ Vue.component('pack-block', {
   methods: {
     to_select() {
       this.$emit('to_select');
+    },
+    to_hover() {
+      this.$emit('to_hover');
+    },
+    to_unhover() {
+      this.$emit('to_unhover');
     }
   },
   template: 
   `<div class="container" :class="[data.packNumber, data.status]">
-    <div class="main-block-border" @click="to_select()">
+    <div class="main-block-border" 
+    @click="to_select()" 
+    @mouseover='to_hover()'
+    @mouseout='to_unhover()'>
       <div class="main-block-pack">
         <div class="pack-container">
           <p class="main-block-pack__description" v-if='data.descText'>Сказочное заморское яство</p>
@@ -84,13 +93,27 @@ var app = new Vue ({
   },
   methods: {
     toSelect(id) {
-      console.log(this.packs[id].status);
-      if (this.packs[id].status == this.default) {
+      if (this.packs[id].status == this.default || this.packs[id].status == this.defaultHover) {
         this.packs[id].status = this.selected;
         this.packs[id].downText = true;
-      } else if (this.packs[id].status == this.selected) {
+      } else if (this.packs[id].status == this.selected || this.packs[id].status == this.selectedHover) {
         this.packs[id].status = this.default;
         this.packs[id].downText = false;
+      }
+    },
+    toHover(id) {
+      if (this.packs[id].status == this.default) {
+        console.log(5);
+        this.packs[id].status = this.defaultHover;
+      } else if (this.packs[id].status == this.selected) {
+        this.packs[id].status = this.selectedHover;
+      }
+    },
+    toUnhover(id) {
+      if (this.packs[id].status == this.defaultHover) {
+        this.packs[id].status = this.default;
+      } else if (this.packs[id].status == this.selectedHover) {
+        this.packs[id].status = this.selected;
       }
     }
   }
