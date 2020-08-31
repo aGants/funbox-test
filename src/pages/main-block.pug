@@ -1,25 +1,2 @@
-mixin pack(order, text, number, kg, present)
-  div(class='container '+order)
-    .main-block-border
-      .main-block-pack
-        .pack-container
-          p.main-block-pack__description Сказочное заморское яство
-          b.main-block-pack__title Нямушка
-          p(class='main-block-pack__with')='c '+text
-          p(class='main-block-pack__number')
-            b=number 
-            span=' '+ 'порций'
-          p(class='main-block-pack__present')=present
-        .pack-container 
-          div.main-block-pack-kg
-            span.main-block-pack-kg__span=kg
-            p.main-block-pack-kg__p кг
-    p.main-block__downtext Чего сидишь? Порадуй котэ, <a href=''>купи.</a>
-
-.main-block
-  +pack('one', 'фуа-гра', '10', '0,5', 'мышь в подарок')
-  +pack('two', 'рыбой', '40', '2', '2 мыши в подарок')
-  +pack('three', 'курой', '100', '5', '5 мышей в подарок заказчик доволен')
-
-  
-  
+div(class='main-block' id='block')
+  pack-block(:data="data" v-for="(data, index) in packs" :key="index")
