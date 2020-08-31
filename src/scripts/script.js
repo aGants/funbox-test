@@ -87,9 +87,10 @@ var app = new Vue ({
       console.log(this.packs[id].status);
       if (this.packs[id].status == this.default) {
         this.packs[id].status = this.selected;
+        this.packs[id].downText = true;
       } else if (this.packs[id].status == this.selected) {
         this.packs[id].status = this.default;
-
+        this.packs[id].downText = false;
       }
     }
   }
