@@ -10,30 +10,37 @@ $text-bg: #ffffff;
 $main-text-color: #000000;
 $second-text-color: #666666;
 
-:root {
-  --default: #1698d9;
-  --default-hover: #2ea8e6;
-  --select: #d91667;
-  --select-hover: #e62e7a;
-  --disabled: #b3b3b3;
-  --disabled-text: #ffff66;
-}
+$default: #1698d9;
+$default-hover: #2ea8e6;
+$select: #d91667;
+$select-hover: #e62e7a;
+$disabled: #b3b3b3;
+$disabled-text: #ffff66;
 
-.default {
+
+@mixin theme($color: #fff) {
   .main-block {
     &-border, &-pack-kg {
-      background: var(--default);
+      background: $color;
     }
   }
+}
+.default {
+  @include theme($default);
+}
+
+.default-hover {
+  @include theme($default-hover);
 }
 
 .selected {
-  .main-block {
-    &-border, &-pack-kg {
-      background: var(--select);
-    }
-  }
+  @include theme($select);
 }
+
+.selected-hover {
+  @include theme($select-hover);
+  }
+
 
 .disabled {
   .pack-container:first-child {
@@ -46,10 +53,10 @@ $second-text-color: #666666;
       opacity: 0.4;
     }
     &-border, &-pack-kg {
-      background: var(--disabled);
+      background: $disabled;
     }
     &__downtext {
-      color: var(--disabled-text);
+      color: $disabled-text;
     }
   }
 }

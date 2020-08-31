@@ -20,6 +20,7 @@
 
 @mixin inc-click-area($size: 10px) {
   position: relative;
+  cursor: pointer;
 
   &::after {
     content: '';

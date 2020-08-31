@@ -80,9 +80,9 @@ body {
       margin-top: 14px;
 
       & a {
-        color: var(--default);
+        color: $default;
         text-decoration: none;
-        border-bottom: 1px dashed var(--default);
+        border-bottom: 1px dashed $default;
       }
     }
 
@@ -91,8 +91,8 @@ body {
         width: 320px;
         height: 480px;
         clip-path: polygon(45px 0, 100% 0, 100% 100%, 0 100%, 0 45px);
-        background: var(--default);
         border-radius: 0 15px 15px;
+        @include inc-click-area(5px);
       }
 
     &-pack {
