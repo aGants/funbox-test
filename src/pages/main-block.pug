@@ -1,2 +1,2 @@
 div(class='main-block' id='block')
-  pack-block(:data="data" v-for="(data, index) in packs" :key="index")
+  pack-block(@to_select="toSelect(index)" :data="data" v-for="(data, index) in packs" :key="index")

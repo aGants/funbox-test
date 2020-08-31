@@ -1,13 +1,17 @@
 Vue.component('pack-block', {
   props: ["data"],
+  methods: {
+    to_select() {
+      this.$emit('to_select');
+    }
+  },
   template: 
   `<div class="container" :class="[data.packNumber, data.status]">
-    <div class = "main-block-border">
+    <div class="main-block-border" @click="to_select()">
       <div class="main-block-pack">
         <div class="pack-container">
           <p class="main-block-pack__description" v-if='data.descText'>Сказочное заморское яство</p>
           <p class="main-block-pack__description" v-else='data.descText'>Котэ не одобряет</p>
-
           <b class="main-block-pack__title">Нямушка</b>
           <div>
             <p class="main-block-pack__with">{{data.name}}</p>
@@ -27,7 +31,9 @@ Vue.component('pack-block', {
       </div>
     </div>
     <p class='main-block__downtext' v-if='data.downText'>{{data.downtext}}</p>
-    <p class='main-block__downtext' v-else>Чего сидишь? Порадуй котэ, <a>купи.</a></p>
+    <p class='main-block__downtext' v-else>Чего сидишь? Порадуй котэ, 
+      <a @click="to_select()">купи.</a>
+    </p>
   </div>
   `
 });
@@ -75,5 +81,16 @@ var app = new Vue ({
         downText: false
       }
     ]
+  },
+  methods: {
+    toSelect(id) {
+      console.log(this.packs[id].status);
+      if (this.packs[id].status == this.default) {
+        this.packs[id].status = this.selected;
+      } else if (this.packs[id].status == this.selected) {
+        this.packs[id].status = this.default;
+
+      }
+    }
   }
 });
