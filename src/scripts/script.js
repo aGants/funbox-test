@@ -1,15 +1,9 @@
 Vue.component('pack-block', {
   props: ["data"],
   methods: {
-    to_select() {
-      this.$emit('to_select');
-    },
-    to_hover() {
-      this.$emit('to_hover');
-    },
-    to_unhover() {
-      this.$emit('to_unhover');
-    }
+    to_select() { this.$emit('to_select'); },
+    to_hover() { this.$emit('to_hover'); },
+    to_unhover() { this.$emit('to_unhover'); }
   },
   template: 
   `<div class="container" :class="[data.packNumber, data.status]">
@@ -23,24 +17,24 @@ Vue.component('pack-block', {
           <p class="main-block-pack__description select-hover-text" v-else='data.descText'>Котэ не одобряет?</p>
           <b class="main-block-pack__title">Нямушка</b>
           <div>
-            <p class="main-block-pack__with">{{data.name}}</p>
+            <p class="main-block-pack__name">{{ data.name }}</p>
           </div>
           <p class="main-block-pack__number">
-            <b>{{data.number}}</b>
+            <b>{{ data.number }}</b>
             <span> порций</span>
           </p>
-          <p class="main-block-pack__present">{{data.present}}</p>
+          <p class="main-block-pack__present">{{ data.present }}</p>
         </div>
         <div class="pack-container"> 
           <div class="main-block-pack-kg">
-            <span class="main-block-pack-kg__span">{{data.kg}}</span>
+            <span class="main-block-pack-kg__span">{{ data.kg }}</span>
             <p class="main-block-pack-kg__p"> кг</p>
           </div>
         </div>
       </div>
     </div>
-    <p class='main-block__downtext' v-if='data.downText'>{{data.downtext}}</p>
-    <p class='main-block__downtext' v-else-if='data.status === "disabled"'> Печалька, с {{data.name}} закончилось </p>
+    <p class='main-block__downtext' v-if='data.downText'>{{ data.downtext }}</p>
+    <p class='main-block__downtext' v-else-if='data.status === "disabled"'> Печалька, с {{ data.name }} закончилось </p>
     <p class='main-block__downtext' v-else>Чего сидишь? Порадуй котэ, 
       <a class='link' @click="to_select()" @mouseover='to_hover()' @mouseout='to_unhover()'>купи.</a>
     </p>

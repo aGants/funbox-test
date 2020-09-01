@@ -9,8 +9,8 @@ const sass         = require('gulp-sass');
 const postcss      = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano      = require('cssnano');
-const imagemin     = require('gulp-imagemin');;
-const webpack      = require('webpack-stream');
+const imagemin     = require('gulp-imagemin');
+const concat       = require('gulp-concat');
 
 function ghPages(cb) {
   ghpages.publish(path.join(process.cwd(), './build'), cb);
@@ -51,8 +51,9 @@ function buildAssets() {
 }
 
 function buildScripts() {
-  return src('src/scripts/script.js')
-    .pipe(webpack({ output: { filename: 'bundle.js' }}))
+  return src(['node_modules/vue/dist/vue.min.js',
+    'src/scripts/script.js'])
+    .pipe(concat('script.js'))
     .pipe(dest('build/scripts/'));
 }
 
