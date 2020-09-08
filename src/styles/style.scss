@@ -10,16 +10,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   background: linear-gradient(to bottom, #000000 0%, transparent 15%, transparent 85%, #000000 100%),
   url(../assets/images/background.jpg) repeat;
+  overflow-x: hidden;
   @include w-from($screen-lg) {
     height: 100vh;
   }
 }
 
 .pack-container {
-    margin: 19px 11px 10px 44px;
+  margin: 19px 11px 10px 44px;
 }
 
 .main {
