@@ -63,6 +63,7 @@ Js отлаживаю с помощью console.log().
 
 ##### 7. Какие ресурсы вы используете для развития в профессиональной сфере? Приведите несколько конкретных примеров (сайты, блоги и так далее). Какое направление развития вам более близко: JS-программирование, HTML/CSS- верстка или и то, и другое? Какие ещё области знаний, кроме тех, что непосредственно относятся к работе, вам интересны?
 Cайты: [Html academy](https://htmlacademy.ru/study), [Хекслет](https://ru.hexlet.io/) и их проект [Code basics](https://ru.code-basics.com/), [Современный учебник JavaScript](https://learn.javascript.ru/)
+
 Каналы на ютубе: [Гоша Дударь](https://www.youtube.com/user/PlurrimiTube), [Фрилансер по жизни - IT и фриланс](https://www.youtube.com/channel/UCedskVwIKiZJsO8XdJdLKnA), [WebDesign Master](https://www.youtube.com/c/АлексейКлиманов_мастер), [Glo Academy](https://www.youtube.com/channel/UCVswRUcKC-M35RzgPRv8qUg)
 
 Сейчас мне ближе и понятнее HTML/CSS вёрстка, так как она больше мной изучена, я увереннее себя чувствую во время написания кода. Но сейчас стараюсь подтянуть знания и в JS-программировании, читаю онлайн-учебник и пробую применять знания на практике. 
